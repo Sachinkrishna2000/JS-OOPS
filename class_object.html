@@ -17,13 +17,13 @@
     </form>
     <script>
             
-            class Validate{
+            class Login{
             constructor(user,pass){
                 this.user = user;
                 this.pass = pass;
                 
             }
-            logincheck(){
+            checklogin(){
                 var x = document.getElementById('username').value;
                 var y = document.getElementById('password').value;
                 if(x==this.user && y==this.pass){
@@ -38,7 +38,7 @@
         
     function login(){
         var a = new Validate('john1234',12345);
-        a.logincheck();
+        a.checklogin();
     }
         
     </script>
