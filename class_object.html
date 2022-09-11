@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Object JS Program</title>
+</head>
+<body>
+    <form action="">
+        <label>Username</label><br>
+        <input type="text" id="username"><br><br><br>
+        <label>Password</label><br>
+        <input type="text" id="password"><br><br><br>
+        <button type="button" onclick="login()">Submit</button><br>
+        
+    </form>
+    <script>
+            
+            class Validate{
+            constructor(user,pass){
+                this.user = user;
+                this.pass = pass;
+                
+            }
+            logincheck(){
+                var x = document.getElementById('username').value;
+                var y = document.getElementById('password').value;
+                if(x==this.user && y==this.pass){
+                    document.write("User Logged In Successfully");
+                
+                }
+                else{
+                    alert("User Cannot Login");
+                }
+            }
+        };
+        
+    function login(){
+        var a = new Validate('john1234',12345);
+        a.logincheck();
+    }
+        
+    </script>
+    
+</body>
+</html>

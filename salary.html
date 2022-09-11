@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Bonus</title>
+</head>
+<body>
+    <form action="">
+        <br>
+        <label>Salary</label><br><br>
+        <input type="number" id="salary"><br><br>
+        <label>Role Type</label><br><br>
+        <input type="radio" id="IT" name="role" value="IT">
+        <label for="IT"> IT</label> <br>
+        <input type="radio" id="Testing" name="role" value="Testing">
+        <label for="Testing"> Testing </label> <br>
+        <input type="radio" id="Admin" name="role" value="Admin">
+        <label for="Admin">Admin</label> <br>
+        <input type="radio" id="Others" name="role" value="Others">
+        <label for="Others"> Others</label> <br>
+        <br>
+        <input type="button" value="Submit" onclick="bonus(this.form)">
+        
+    </form>
+    <script>
+        class Salary{
+            constructor(){
+
+            }
+            bonusIT(){
+                var x = document.getElementById('salary').value;
+                x = parseInt(x);
+                var tot = x + (x*0.5);
+                document.write("The bonus for IT role is :" + (x*0.5));
+                document.write("<br>");
+                document.write("The total salary for IT role is :" + tot);
+                document.write("<br>");
+            }
+            bonusTest(){
+                var x = document.getElementById('salary').value;
+                x = parseInt(x);
+                var tot = x + (x*0.45);
+                document.write("The bonus for Testing role is :" + (x * 0.45));
+                document.write("<br>");
+                document.write("The total salary for Testing role is :" + tot);
+                document.write("<br>");
+            }
+            bonusAdmin(){
+                var x = document.getElementById('salary').value;
+                x = parseInt(x);
+                var tot = x + (x*0.3);
+                document.write("The bonus for Admin role is :" + (x * 0.3));
+                document.write("<br>");
+                document.write("The total salary for Admin role is :" + tot);
+                document.write("<br>");
+            }
+            bonusOthers(){
+                var x = document.getElementById('salary').value;
+                x = parseInt(x);
+                var tot = x + (x*0.2);
+                document.write("The bonus for Others is :" + (x * 0.2));
+                document.write("<br>");
+                document.write("The total salary for Others is :" + tot);
+                document.write("<br>");
+            }
+        };
+        function bonus(form){
+            var type = form.role.value;
+            var v = new Salary();
+            if(type=="IT"){
+                v.bonusIT();
+            }
+            else if(type=="Testing"){
+                v.bonusTest();
+            }
+            else if(type=="Admin"){
+                v.bonusAdmin();
+            }
+            else{
+                v.bonusOthers();
+            }
+        }
+    </script>
+    
+</body>
+</html>
