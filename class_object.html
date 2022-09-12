@@ -12,11 +12,12 @@
         <input type="text" id="username"><br><br><br>
         <label>Password</label><br>
         <input type="text" id="password"><br><br><br>
-        <button type="button" onclick="login()">Submit</button><br>
+        <button type="button" onclick="login()">Submit</button><br><br>
+        <p id="demo"></p>
         
     </form>
     <script>
-            
+        
             class Login{
             constructor(user,pass){
                 this.user = user;
@@ -27,7 +28,8 @@
                 var x = document.getElementById('username').value;
                 var y = document.getElementById('password').value;
                 if(x==this.user && y==this.pass){
-                    document.write("User Logged In Successfully");
+                    alert("User Logged In Successfully");
+                    document.getElementById("demo").innerHTML = "User Logged In Successfully";
                 
                 }
                 else{
@@ -35,11 +37,10 @@
                 }
             }
         };
-        
     function login(){
-        var a = new Validate('john1234',12345);
+        var a = new Login('john1234',12345);
         a.checklogin();
-    }
+    }      
         
     </script>
     
